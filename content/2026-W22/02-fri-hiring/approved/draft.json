@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-05-22T00:00:00+08:00",
+  "slot": "02-fri-hiring",
+  "week": "2026-W22",
+  "canva_design_id": "DAHKZ9_lpbs",
+  "canva_edit_url": "https://www.canva.com/d/rkxPxSIM-bwezQK",
+  "county": "Santa Clara County, CA",
+  "total_openings": 19,
+  "roles": {
+    "RN": 2, "LVN": 2, "PT": 2, "PTA": 2,
+    "OT": 2, "COTA": 2, "ST": 2, "CHHA": 2,
+    "MSW": 2, "Weekend RN": 1
+  },
+  "template_page_used": 1,
+  "schedule": {
+    "post_day": "Friday",
+    "drop_pst": "09:00",
+    "drop_mla": "01:00 Sat"
+  },
+  "platforms": ["instagram", "facebook", "linkedin"],
+  "status": "approved"
+}
