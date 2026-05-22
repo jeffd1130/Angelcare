@@ -1,0 +1,53 @@
+{
+  "_note": "Active hiring roster. Update headcounts here; briefs pull from this file.",
+  "counties": {
+    "solano": {
+      "name": "Solano County",
+      "roles": {
+        "RN": 2,
+        "LVN": 2,
+        "ST": 1,
+        "PT": 2,
+        "PTA": 2,
+        "OT": 2,
+        "COTA": 2,
+        "CHHA": 2,
+        "MSW": 1,
+        "Weekend RN": 1
+      },
+      "total_openings": 17
+    },
+    "santa_clara": {
+      "name": "Santa Clara County",
+      "roles": {
+        "RN": 2,
+        "LVN": 2,
+        "ST": 2,
+        "PT": 2,
+        "PTA": 2,
+        "OT": 2,
+        "COTA": 2,
+        "CHHA": 2,
+        "MSW": 2,
+        "Weekend RN": 1
+      },
+      "total_openings": 19
+    }
+  },
+  "rotation": {
+    "tuesday": "solano",
+    "friday": "santa_clara"
+  },
+  "role_full_names": {
+    "RN": "Registered Nurse",
+    "LVN": "Licensed Vocational Nurse",
+    "ST": "Speech Therapist",
+    "PT": "Physical Therapist",
+    "PTA": "Physical Therapist Assistant",
+    "OT": "Occupational Therapist",
+    "COTA": "Certified Occupational Therapy Assistant",
+    "CHHA": "Certified Home Health Aide",
+    "MSW": "Medical Social Worker",
+    "Weekend RN": "Weekend Registered Nurse"
+  }
+}
