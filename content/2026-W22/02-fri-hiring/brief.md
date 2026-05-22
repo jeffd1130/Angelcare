@@ -8,7 +8,7 @@
 - ST × 2 · CHHA × 2 · MSW × 2
 - 19 open positions — home health experience preferred
 
-**CTA:** Apply now — link in bio · or email careers@angelcarehhs.com
+**CTA:** Apply now — link in bio · or email ydominguez@angelcarehhs.com
 **Template page to use:** 1
 **Featured role for design headline:** Physical Therapist (PT)
 **Photo asset:** (leave blank — use template background)

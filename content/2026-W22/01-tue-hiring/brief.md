@@ -8,7 +8,7 @@
 - ST × 1 · CHHA × 2 · MSW × 1
 - 17 open positions — home health experience preferred
 
-**CTA:** Apply now — link in bio · or email careers@angelcarehhs.com
+**CTA:** Apply now — link in bio · or email ydominguez@angelcarehhs.com
 **Template page to use:** 1
 **Featured role for design headline:** Registered Nurse (RN)
 **Photo asset:** (leave blank — use template background)

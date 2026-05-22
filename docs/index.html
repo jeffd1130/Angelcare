@@ -3,26 +3,131 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Angelcare HHS — Hiring Posts</title>
+  <title>Angelcare HHS — Hiring Posts · W22</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f5; color: #1a1a1a; margin: 0; padding: 24px; }
-    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 4px; }
-    .subtitle { color: #666; font-size: 0.9rem; margin-bottom: 32px; }
-    .card { background: #fff; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
-    .card h2 { font-size: 1.1rem; margin: 0 0 4px; }
-    .meta { color: #888; font-size: 0.8rem; margin-bottom: 16px; }
-    .btn { display: inline-block; background: #0057B8; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
-    .platforms { display: flex; gap: 8px; margin-bottom: 12px; }
-    .tab { padding: 4px 10px; border-radius: 4px; background: #eee; font-size: 0.75rem; cursor: pointer; border: none; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f0f2f5; color: #1a1a1a; padding: 24px; }
+    header { margin-bottom: 28px; }
+    header h1 { font-size: 1.4rem; font-weight: 700; }
+    header p { color: #666; font-size: 0.85rem; margin-top: 4px; }
+    .card { background: #fff; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+    .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+    .card-header h2 { font-size: 1.05rem; font-weight: 700; }
+    .badge { background: #e8f4e8; color: #2d6a2d; font-size: 0.72rem; font-weight: 600; padding: 3px 8px; border-radius: 12px; }
+    .meta { font-size: 0.8rem; color: #777; margin-bottom: 16px; }
+    .btn { display: inline-block; background: #0057B8; color: #fff; padding: 9px 18px; border-radius: 7px; text-decoration: none; font-size: 0.85rem; font-weight: 600; margin-bottom: 20px; }
+    .tabs { display: flex; gap: 6px; margin-bottom: 12px; }
+    .tab { padding: 5px 12px; border-radius: 5px; background: #eee; font-size: 0.78rem; cursor: pointer; border: none; font-weight: 500; }
     .tab.active { background: #0057B8; color: #fff; }
-    .caption-box { background: #f9f9f9; border-radius: 6px; padding: 12px; font-size: 0.85rem; line-height: 1.5; white-space: pre-wrap; }
-    .drop-times { font-size: 0.8rem; color: #555; margin-top: 12px; }
-    .empty { text-align: center; color: #aaa; padding: 60px 0; }
+    .caption-panel { display: none; }
+    .caption-panel.active { display: block; }
+    .caption-box { background: #f8f9fa; border-radius: 8px; padding: 14px; font-size: 0.82rem; line-height: 1.6; white-space: pre-wrap; border: 1px solid #e9ecef; }
+    .drop-row { display: flex; gap: 24px; margin-top: 16px; font-size: 0.8rem; color: #555; }
+    .drop-item strong { color: #1a1a1a; }
+    footer { text-align: center; color: #aaa; font-size: 0.75rem; margin-top: 32px; }
   </style>
 </head>
 <body>
-  <h1>Angelcare HHS — Hiring Posts</h1>
-  <p class="subtitle">Approval page · Updated by Claude Code</p>
-  <div class="empty">No drafts yet for this week. Run <code>produce-week</code> to generate posts.</div>
+  <header>
+    <h1>Angelcare HHS — Hiring Posts</h1>
+    <p>Week 22 · 2026 · Drafts for review — approve before posting</p>
+  </header>
+
+  <!-- TUESDAY: SOLANO -->
+  <div class="card">
+    <div class="card-header">
+      <h2>01 · Tuesday · Solano County, CA</h2>
+      <span class="badge">Draft Ready</span>
+    </div>
+    <p class="meta">17 openings · RN, LVN, PT, PTA, OT, COTA, ST, CHHA, MSW, Weekend RN</p>
+    <a class="btn" href="https://www.canva.com/d/NIvyHav68onv1Ri" target="_blank">Open in Canva →</a>
+    <div class="tabs">
+      <button class="tab active" onclick="show('tue','ig',this)">Instagram</button>
+      <button class="tab" onclick="show('tue','fb',this)">Facebook</button>
+      <button class="tab" onclick="show('tue','li',this)">LinkedIn</button>
+    </div>
+    <div id="tue-ig" class="caption-panel active">
+      <div class="caption-box">We're hiring in Solano County, CA! 🏥 Angelcare Home Health Services is looking for dedicated healthcare professionals to join our growing team. RN, LVN, PT, PTA, OT, COTA, Speech Therapist, CHHA, MSW &amp; Weekend RN — 17 openings available.
+
+Apply now — link in bio or email ydominguez@angelcarehhs.com
+
+#AngelcareHHS #NowHiring #HomeHealthCare #SolanoCounty #RegisteredNurse #PhysicalTherapist #OccupationalTherapist #HealthcareJobs #HomeHealthJobs #NursingJobs #CaliforniaHealthcare #JoinOurTeam</div>
+    </div>
+    <div id="tue-fb" class="caption-panel">
+      <div class="caption-box">📢 Angelcare Home Health Services is actively hiring in Solano County, CA! We have 17 open positions across clinical and support roles — RN, LVN, PT, PTA, OT, COTA, Speech Therapist, CHHA, Medical Social Worker, and Weekend RN.
+
+If you're passionate about delivering quality care in the home setting, we'd love to hear from you. Apply through the link or reach out directly to ydominguez@angelcarehhs.com.
+
+#NowHiring #HomeHealthCare #SolanoCounty #AngelcareHHS #HealthcareJobs</div>
+    </div>
+    <div id="tue-li" class="caption-panel">
+      <div class="caption-box">Angelcare Home Health Services is expanding in Solano County, CA and actively seeking experienced healthcare professionals across 17 roles — including Registered Nurses, Physical and Occupational Therapists, Speech Therapists, LVNs, and Certified Home Health Aides.
+
+We are committed to a supportive work environment where quality patient care comes first. If you or someone in your network is looking for a home health opportunity in the Bay Area, please reach out or share this post.
+
+📩 ydominguez@angelcarehhs.com | angelcarehhs.com
+
+#HomeHealthcare #NowHiring #HealthcareJobs #SolanoCounty</div>
+    </div>
+    <div class="drop-row">
+      <div class="drop-item"><strong>Drop (PST):</strong> Tuesday 9:00 AM</div>
+      <div class="drop-item"><strong>Drop (Manila):</strong> Wednesday 1:00 AM</div>
+      <div class="drop-item"><strong>Platforms:</strong> IG · Facebook · LinkedIn</div>
+    </div>
+  </div>
+
+  <!-- FRIDAY: SANTA CLARA -->
+  <div class="card">
+    <div class="card-header">
+      <h2>02 · Friday · Santa Clara County, CA</h2>
+      <span class="badge">Draft Ready</span>
+    </div>
+    <p class="meta">19 openings · RN, LVN, PT, PTA, OT, COTA, ST, CHHA, MSW, Weekend RN</p>
+    <a class="btn" href="https://www.canva.com/d/rkxPxSIM-bwezQK" target="_blank">Open in Canva →</a>
+    <div class="tabs">
+      <button class="tab active" onclick="show('fri','ig',this)">Instagram</button>
+      <button class="tab" onclick="show('fri','fb',this)">Facebook</button>
+      <button class="tab" onclick="show('fri','li',this)">LinkedIn</button>
+    </div>
+    <div id="fri-ig" class="caption-panel active">
+      <div class="caption-box">We're hiring in Santa Clara County, CA! 🏥 Angelcare Home Health Services has 19 open positions for compassionate healthcare professionals. RN, LVN, PT, PTA, OT, COTA, Speech Therapist, CHHA, MSW &amp; Weekend RN — apply today.
+
+Link in bio or email ydominguez@angelcarehhs.com
+
+#AngelcareHHS #NowHiring #HomeHealthCare #SantaClaraCounty #RegisteredNurse #PhysicalTherapist #OccupationalTherapist #HealthcareJobs #HomeHealthJobs #NursingJobs #CaliforniaHealthcare #JoinOurTeam</div>
+    </div>
+    <div id="fri-fb" class="caption-panel">
+      <div class="caption-box">📢 Angelcare Home Health Services is hiring in Santa Clara County, CA! 19 open positions available — RN, LVN, PT, PTA, OT, COTA, Speech Therapist, CHHA, Medical Social Worker, and Weekend RN.
+
+We believe in supporting our clinicians so they can focus on what matters most: patient care. Interested? Email ydominguez@angelcarehhs.com or visit angelcarehhs.com.
+
+#NowHiring #HomeHealthCare #SantaClaraCounty #AngelcareHHS #HealthcareJobs</div>
+    </div>
+    <div id="fri-li" class="caption-panel">
+      <div class="caption-box">Angelcare Home Health Services is growing in Santa Clara County, CA — 19 open positions for clinical professionals including Registered Nurses, Physical and Occupational Therapists, Speech Therapists, LVNs, Medical Social Workers, and Certified Home Health Aides.
+
+We value our team as much as our patients. If you're seeking a meaningful home health career in Silicon Valley and the surrounding area, we'd welcome the conversation.
+
+📩 ydominguez@angelcarehhs.com | angelcarehhs.com
+
+#HomeHealthcare #NowHiring #HealthcareJobs #SantaClaraCounty</div>
+    </div>
+    <div class="drop-row">
+      <div class="drop-item"><strong>Drop (PST):</strong> Friday 9:00 AM</div>
+      <div class="drop-item"><strong>Drop (Manila):</strong> Saturday 1:00 AM</div>
+      <div class="drop-item"><strong>Platforms:</strong> IG · Facebook · LinkedIn</div>
+    </div>
+  </div>
+
+  <footer>Drafts produced by Claude Code · Review and approve before posting</footer>
+
+  <script>
+    function show(post, platform, btn) {
+      document.querySelectorAll('#' + post + '-ig, #' + post + '-fb, #' + post + '-li').forEach(el => el.classList.remove('active'));
+      document.getElementById(post + '-' + platform).classList.add('active');
+      btn.closest('.card').querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+    }
+  </script>
 </body>
 </html>

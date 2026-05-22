@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-05-22T00:00:00+08:00",
+  "slot": "01-tue-hiring",
+  "week": "2026-W22",
+  "canva_design_id": "DAHKZ0PmlAA",
+  "canva_edit_url": "https://www.canva.com/d/NIvyHav68onv1Ri",
+  "county": "Solano County, CA",
+  "total_openings": 17,
+  "roles": {
+    "RN": 2, "LVN": 2, "PT": 2, "PTA": 2,
+    "OT": 2, "COTA": 2, "ST": 1, "CHHA": 2,
+    "MSW": 1, "Weekend RN": 1
+  },
+  "template_page_used": 1,
+  "schedule": {
+    "post_day": "Tuesday",
+    "drop_pst": "09:00",
+    "drop_mla": "01:00 Wed"
+  },
+  "platforms": ["instagram", "facebook", "linkedin"],
+  "status": "draft-ready"
+}
