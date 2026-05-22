@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "mode": "copy-template",
+  "_mode_doc": "Each run copies the master hiring template (19 pages), selects the page matching the role, then edits text fields in-place. No fresh-generate — visual consistency is locked to the existing design. To switch a slot to a different page, update slot.template_page.",
+  "canva_workspace": {
+    "template_design_id": "DAG2tE1DHiI",
+    "template_design_title": "Blue Photo Job Vacancy Instagram Post",
+    "template_pages": 19,
+    "brand_doc_id": "DAHKZvtfKl4",
+    "brand_doc_title": "Angelcare Brand Reference",
+    "brand_kit_id": null,
+    "_brand_kit_note": "No Canva brand kit exists yet. Brand colors/fonts from DAHKZvtfKl4. Create a brand kit in Canva and add the ID here when ready."
+  },
+  "github": {
+    "repo": "jeffd1130/Angelcare",
+    "pages_url": "https://jeffd1130.github.io/Angelcare/",
+    "branch": "main",
+    "docs_source": "/docs"
+  },
+  "platforms": ["instagram", "facebook", "linkedin"],
+  "templates": {
+    "01-tue-hiring": {
+      "name": "ACA-Hiring-Tuesday",
+      "template_page": 1,
+      "design_type": "instagram_post",
+      "dimensions": "1080x1080",
+      "format": "single",
+      "audience": "job seekers",
+      "schedule": {
+        "day": "Tuesday",
+        "drop_pst": "09:00",
+        "drop_mla": "01:00+1"
+      },
+      "placeholders": {
+        "text": ["job_title", "location", "requirements", "cta"]
+      }
+    },
+    "02-fri-hiring": {
+      "name": "ACA-Hiring-Friday",
+      "template_page": 1,
+      "design_type": "instagram_post",
+      "dimensions": "1080x1080",
+      "format": "single",
+      "audience": "job seekers",
+      "schedule": {
+        "day": "Friday",
+        "drop_pst": "09:00",
+        "drop_mla": "01:00+1"
+      },
+      "placeholders": {
+        "text": ["job_title", "location", "requirements", "cta"]
+      }
+    }
+  }
+}
