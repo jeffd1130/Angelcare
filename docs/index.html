@@ -33,6 +33,9 @@
     .caption-side { display: flex; flex-direction: column; gap: 16px; }
     .slide-header { }
     .slide-label { font-size: 0.72rem; font-weight: 600; color: #6b8caa; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
+    .status-badge { display: inline-block; font-size: 0.72rem; font-weight: 600; padding: 3px 10px; border-radius: 12px; margin-bottom: 8px; }
+    .status-pending { background: #3a2e00; color: #ffd166; }
+    .status-approved { background: #0a2e1a; color: #4caf7d; }
     .slide-title { font-size: 1.5rem; font-weight: 700; color: #fff; line-height: 1.2; }
     .slide-meta { font-size: 0.83rem; color: #6b8caa; margin-top: 6px; }
     .drop-row { display: flex; gap: 16px; flex-wrap: wrap; }
@@ -92,6 +95,7 @@
         </div>
         <div class="caption-side">
           <div class="slide-header">
+            <div class="status-badge status-pending">⏳ Pending Review</div>
             <div class="slide-label">01 · Tuesday</div>
             <div class="slide-title">Solano County, CA</div>
             <div class="slide-meta">17 openings · RN, LVN, PT, PTA, OT, COTA, ST, CHHA, MSW, Weekend RN</div>
@@ -143,6 +147,7 @@ We are committed to a supportive work environment where quality patient care com
         </div>
         <div class="caption-side">
           <div class="slide-header">
+            <div class="status-badge status-pending">⏳ Pending Review</div>
             <div class="slide-label">02 · Friday</div>
             <div class="slide-title">Santa Clara County, CA</div>
             <div class="slide-meta">19 openings · RN, LVN, PT, PTA, OT, COTA, ST, CHHA, MSW, Weekend RN</div>
