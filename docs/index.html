@@ -6,128 +6,221 @@
   <title>Angelcare HHS — Hiring Posts · W22</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f0f2f5; color: #1a1a1a; padding: 24px; }
-    header { margin-bottom: 28px; }
-    header h1 { font-size: 1.4rem; font-weight: 700; }
-    header p { color: #666; font-size: 0.85rem; margin-top: 4px; }
-    .card { background: #fff; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
-    .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
-    .card-header h2 { font-size: 1.05rem; font-weight: 700; }
-    .badge { background: #e8f4e8; color: #2d6a2d; font-size: 0.72rem; font-weight: 600; padding: 3px 8px; border-radius: 12px; }
-    .meta { font-size: 0.8rem; color: #777; margin-bottom: 16px; }
-    .btn { display: inline-block; background: #0057B8; color: #fff; padding: 9px 18px; border-radius: 7px; text-decoration: none; font-size: 0.85rem; font-weight: 600; margin-bottom: 20px; }
-    .tabs { display: flex; gap: 6px; margin-bottom: 12px; }
-    .tab { padding: 5px 12px; border-radius: 5px; background: #eee; font-size: 0.78rem; cursor: pointer; border: none; font-weight: 500; }
-    .tab.active { background: #0057B8; color: #fff; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f1923; color: #f0f0f0; min-height: 100vh; display: flex; flex-direction: column; }
+
+    /* Header */
+    header { padding: 20px 32px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e2d3d; }
+    header h1 { font-size: 1rem; font-weight: 600; color: #fff; letter-spacing: 0.02em; }
+    header span { font-size: 0.78rem; color: #6b8caa; background: #1a2a3a; padding: 4px 10px; border-radius: 20px; }
+
+    /* Carousel wrapper */
+    .carousel-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px 24px 16px; }
+
+    /* Slide */
+    .slides { width: 100%; max-width: 1100px; overflow: hidden; }
+    .slides-inner { display: flex; transition: transform 0.45s cubic-bezier(0.4,0,0.2,1); }
+    .slide { min-width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+
+    /* Left: design preview */
+    .design-side { display: flex; flex-direction: column; gap: 14px; }
+    .design-preview { border-radius: 14px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5); aspect-ratio: 1; background: #1a2a3a; }
+    .design-preview img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .design-actions { display: flex; gap: 10px; }
+    .btn-primary { flex: 1; text-align: center; background: #0057B8; color: #fff; padding: 10px 16px; border-radius: 8px; text-decoration: none; font-size: 0.83rem; font-weight: 600; transition: background 0.2s; }
+    .btn-primary:hover { background: #0046a0; }
+
+    /* Right: caption side */
+    .caption-side { display: flex; flex-direction: column; gap: 16px; }
+    .slide-header { }
+    .slide-label { font-size: 0.72rem; font-weight: 600; color: #6b8caa; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
+    .slide-title { font-size: 1.5rem; font-weight: 700; color: #fff; line-height: 1.2; }
+    .slide-meta { font-size: 0.83rem; color: #6b8caa; margin-top: 6px; }
+    .drop-row { display: flex; gap: 16px; flex-wrap: wrap; }
+    .drop-pill { background: #1a2a3a; border-radius: 6px; padding: 6px 12px; font-size: 0.78rem; color: #a0b8cc; }
+    .drop-pill strong { color: #fff; }
+
+    /* Platform tabs */
+    .tabs { display: flex; gap: 6px; background: #1a2a3a; padding: 5px; border-radius: 10px; width: fit-content; }
+    .tab { padding: 6px 14px; border-radius: 7px; font-size: 0.78rem; font-weight: 600; cursor: pointer; border: none; background: transparent; color: #6b8caa; transition: all 0.2s; }
+    .tab.active { background: #fff; color: #0f1923; }
+
+    /* Caption box */
     .caption-panel { display: none; }
     .caption-panel.active { display: block; }
-    .caption-box { background: #f8f9fa; border-radius: 8px; padding: 14px; font-size: 0.82rem; line-height: 1.6; white-space: pre-wrap; border: 1px solid #e9ecef; }
-    .drop-row { display: flex; gap: 24px; margin-top: 16px; font-size: 0.8rem; color: #555; }
-    .drop-item strong { color: #1a1a1a; }
-    footer { text-align: center; color: #aaa; font-size: 0.75rem; margin-top: 32px; }
+    .caption-box { background: #1a2a3a; border-radius: 10px; padding: 16px; font-size: 0.82rem; line-height: 1.7; white-space: pre-wrap; color: #c8d8e8; max-height: 280px; overflow-y: auto; border: 1px solid #243444; }
+    .caption-box::-webkit-scrollbar { width: 4px; }
+    .caption-box::-webkit-scrollbar-track { background: transparent; }
+    .caption-box::-webkit-scrollbar-thumb { background: #2a3f55; border-radius: 4px; }
+
+    /* Nav */
+    .nav { display: flex; align-items: center; gap: 20px; margin-top: 28px; }
+    .nav-btn { width: 42px; height: 42px; border-radius: 50%; border: 1.5px solid #2a3f55; background: transparent; color: #a0b8cc; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+    .nav-btn:hover { background: #1a2a3a; border-color: #4a7a9b; color: #fff; }
+    .nav-btn:disabled { opacity: 0.25; cursor: default; }
+    .dots { display: flex; gap: 8px; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #2a3f55; cursor: pointer; transition: all 0.2s; }
+    .dot.active { background: #0057B8; width: 22px; border-radius: 4px; }
+
+    footer { text-align: center; padding: 16px; font-size: 0.72rem; color: #2a3f55; border-top: 1px solid #1e2d3d; }
+
+    @media (max-width: 700px) {
+      .slide { grid-template-columns: 1fr; }
+      .design-preview { max-width: 320px; margin: 0 auto; }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Angelcare HHS — Hiring Posts</h1>
-    <p>Week 22 · 2026 · Drafts for review — approve before posting</p>
-  </header>
 
-  <!-- TUESDAY: SOLANO -->
-  <div class="card">
-    <div class="card-header">
-      <h2>01 · Tuesday · Solano County, CA</h2>
-      <span class="badge">Draft Ready</span>
-    </div>
-    <p class="meta">17 openings · RN, LVN, PT, PTA, OT, COTA, ST, CHHA, MSW, Weekend RN</p>
-    <a class="btn" href="https://www.canva.com/d/NIvyHav68onv1Ri" target="_blank">Open in Canva →</a>
-    <div class="tabs">
-      <button class="tab active" onclick="show('tue','ig',this)">Instagram</button>
-      <button class="tab" onclick="show('tue','fb',this)">Facebook</button>
-      <button class="tab" onclick="show('tue','li',this)">LinkedIn</button>
-    </div>
-    <div id="tue-ig" class="caption-panel active">
-      <div class="caption-box">We're hiring in Solano County, CA! 🏥 Angelcare Home Health Services is looking for dedicated healthcare professionals to join our growing team. RN, LVN, PT, PTA, OT, COTA, Speech Therapist, CHHA, MSW &amp; Weekend RN — 17 openings available.
+<header>
+  <h1>Angelcare HHS — Hiring Posts</h1>
+  <span>Week 22 · 2026</span>
+</header>
+
+<div class="carousel-wrap">
+  <div class="slides">
+    <div class="slides-inner" id="slidesInner">
+
+      <!-- SLIDE 1: Tuesday / Solano -->
+      <div class="slide">
+        <div class="design-side">
+          <div class="design-preview">
+            <img src="assets/W22-01-tue-solano.png" alt="Solano County Hiring Post">
+          </div>
+          <div class="design-actions">
+            <a class="btn-primary" href="https://www.canva.com/d/NIvyHav68onv1Ri" target="_blank">Edit in Canva →</a>
+          </div>
+        </div>
+        <div class="caption-side">
+          <div class="slide-header">
+            <div class="slide-label">01 · Tuesday</div>
+            <div class="slide-title">Solano County, CA</div>
+            <div class="slide-meta">17 openings · RN, LVN, PT, PTA, OT, COTA, ST, CHHA, MSW, Weekend RN</div>
+          </div>
+          <div class="drop-row">
+            <div class="drop-pill"><strong>PST:</strong> Tue 9:00 AM</div>
+            <div class="drop-pill"><strong>Manila:</strong> Wed 1:00 AM</div>
+          </div>
+          <div class="tabs">
+            <button class="tab active" onclick="showCap('s1','ig',this)">Instagram</button>
+            <button class="tab" onclick="showCap('s1','fb',this)">Facebook</button>
+            <button class="tab" onclick="showCap('s1','li',this)">LinkedIn</button>
+          </div>
+          <div id="s1-ig" class="caption-panel active">
+            <div class="caption-box">We're hiring in Solano County, CA! 🏥 Angelcare Home Health Services is looking for dedicated healthcare professionals to join our growing team. RN, LVN, PT, PTA, OT, COTA, Speech Therapist, CHHA, MSW &amp; Weekend RN — 17 openings available.
 
 Apply now — link in bio or email ydominguez@angelcarehhs.com
 
 #AngelcareHHS #NowHiring #HomeHealthCare #SolanoCounty #RegisteredNurse #PhysicalTherapist #OccupationalTherapist #HealthcareJobs #HomeHealthJobs #NursingJobs #CaliforniaHealthcare #JoinOurTeam</div>
-    </div>
-    <div id="tue-fb" class="caption-panel">
-      <div class="caption-box">📢 Angelcare Home Health Services is actively hiring in Solano County, CA! We have 17 open positions across clinical and support roles — RN, LVN, PT, PTA, OT, COTA, Speech Therapist, CHHA, Medical Social Worker, and Weekend RN.
+          </div>
+          <div id="s1-fb" class="caption-panel">
+            <div class="caption-box">📢 Angelcare Home Health Services is actively hiring in Solano County, CA! We have 17 open positions across clinical and support roles — RN, LVN, PT, PTA, OT, COTA, Speech Therapist, CHHA, Medical Social Worker, and Weekend RN.
 
 If you're passionate about delivering quality care in the home setting, we'd love to hear from you. Apply through the link or reach out directly to ydominguez@angelcarehhs.com.
 
 #NowHiring #HomeHealthCare #SolanoCounty #AngelcareHHS #HealthcareJobs</div>
-    </div>
-    <div id="tue-li" class="caption-panel">
-      <div class="caption-box">Angelcare Home Health Services is expanding in Solano County, CA and actively seeking experienced healthcare professionals across 17 roles — including Registered Nurses, Physical and Occupational Therapists, Speech Therapists, LVNs, and Certified Home Health Aides.
+          </div>
+          <div id="s1-li" class="caption-panel">
+            <div class="caption-box">Angelcare Home Health Services is expanding in Solano County, CA and actively seeking experienced healthcare professionals across 17 roles — including Registered Nurses, Physical and Occupational Therapists, Speech Therapists, LVNs, and Certified Home Health Aides.
 
 We are committed to a supportive work environment where quality patient care comes first. If you or someone in your network is looking for a home health opportunity in the Bay Area, please reach out or share this post.
 
 📩 ydominguez@angelcarehhs.com | angelcarehhs.com
 
 #HomeHealthcare #NowHiring #HealthcareJobs #SolanoCounty</div>
-    </div>
-    <div class="drop-row">
-      <div class="drop-item"><strong>Drop (PST):</strong> Tuesday 9:00 AM</div>
-      <div class="drop-item"><strong>Drop (Manila):</strong> Wednesday 1:00 AM</div>
-      <div class="drop-item"><strong>Platforms:</strong> IG · Facebook · LinkedIn</div>
-    </div>
-  </div>
+          </div>
+        </div>
+      </div>
 
-  <!-- FRIDAY: SANTA CLARA -->
-  <div class="card">
-    <div class="card-header">
-      <h2>02 · Friday · Santa Clara County, CA</h2>
-      <span class="badge">Draft Ready</span>
-    </div>
-    <p class="meta">19 openings · RN, LVN, PT, PTA, OT, COTA, ST, CHHA, MSW, Weekend RN</p>
-    <a class="btn" href="https://www.canva.com/d/rkxPxSIM-bwezQK" target="_blank">Open in Canva →</a>
-    <div class="tabs">
-      <button class="tab active" onclick="show('fri','ig',this)">Instagram</button>
-      <button class="tab" onclick="show('fri','fb',this)">Facebook</button>
-      <button class="tab" onclick="show('fri','li',this)">LinkedIn</button>
-    </div>
-    <div id="fri-ig" class="caption-panel active">
-      <div class="caption-box">We're hiring in Santa Clara County, CA! 🏥 Angelcare Home Health Services has 19 open positions for compassionate healthcare professionals. RN, LVN, PT, PTA, OT, COTA, Speech Therapist, CHHA, MSW &amp; Weekend RN — apply today.
+      <!-- SLIDE 2: Friday / Santa Clara -->
+      <div class="slide">
+        <div class="design-side">
+          <div class="design-preview">
+            <img src="assets/W22-02-fri-santaclara.png" alt="Santa Clara County Hiring Post">
+          </div>
+          <div class="design-actions">
+            <a class="btn-primary" href="https://www.canva.com/d/rkxPxSIM-bwezQK" target="_blank">Edit in Canva →</a>
+          </div>
+        </div>
+        <div class="caption-side">
+          <div class="slide-header">
+            <div class="slide-label">02 · Friday</div>
+            <div class="slide-title">Santa Clara County, CA</div>
+            <div class="slide-meta">19 openings · RN, LVN, PT, PTA, OT, COTA, ST, CHHA, MSW, Weekend RN</div>
+          </div>
+          <div class="drop-row">
+            <div class="drop-pill"><strong>PST:</strong> Fri 9:00 AM</div>
+            <div class="drop-pill"><strong>Manila:</strong> Sat 1:00 AM</div>
+          </div>
+          <div class="tabs">
+            <button class="tab active" onclick="showCap('s2','ig',this)">Instagram</button>
+            <button class="tab" onclick="showCap('s2','fb',this)">Facebook</button>
+            <button class="tab" onclick="showCap('s2','li',this)">LinkedIn</button>
+          </div>
+          <div id="s2-ig" class="caption-panel active">
+            <div class="caption-box">We're hiring in Santa Clara County, CA! 🏥 Angelcare Home Health Services has 19 open positions for compassionate healthcare professionals. RN, LVN, PT, PTA, OT, COTA, Speech Therapist, CHHA, MSW &amp; Weekend RN — apply today.
 
 Link in bio or email ydominguez@angelcarehhs.com
 
 #AngelcareHHS #NowHiring #HomeHealthCare #SantaClaraCounty #RegisteredNurse #PhysicalTherapist #OccupationalTherapist #HealthcareJobs #HomeHealthJobs #NursingJobs #CaliforniaHealthcare #JoinOurTeam</div>
-    </div>
-    <div id="fri-fb" class="caption-panel">
-      <div class="caption-box">📢 Angelcare Home Health Services is hiring in Santa Clara County, CA! 19 open positions available — RN, LVN, PT, PTA, OT, COTA, Speech Therapist, CHHA, Medical Social Worker, and Weekend RN.
+          </div>
+          <div id="s2-fb" class="caption-panel">
+            <div class="caption-box">📢 Angelcare Home Health Services is hiring in Santa Clara County, CA! 19 open positions available — RN, LVN, PT, PTA, OT, COTA, Speech Therapist, CHHA, Medical Social Worker, and Weekend RN.
 
 We believe in supporting our clinicians so they can focus on what matters most: patient care. Interested? Email ydominguez@angelcarehhs.com or visit angelcarehhs.com.
 
 #NowHiring #HomeHealthCare #SantaClaraCounty #AngelcareHHS #HealthcareJobs</div>
-    </div>
-    <div id="fri-li" class="caption-panel">
-      <div class="caption-box">Angelcare Home Health Services is growing in Santa Clara County, CA — 19 open positions for clinical professionals including Registered Nurses, Physical and Occupational Therapists, Speech Therapists, LVNs, Medical Social Workers, and Certified Home Health Aides.
+          </div>
+          <div id="s2-li" class="caption-panel">
+            <div class="caption-box">Angelcare Home Health Services is growing in Santa Clara County, CA — 19 open positions for clinical professionals including Registered Nurses, Physical and Occupational Therapists, Speech Therapists, LVNs, Medical Social Workers, and Certified Home Health Aides.
 
 We value our team as much as our patients. If you're seeking a meaningful home health career in Silicon Valley and the surrounding area, we'd welcome the conversation.
 
 📩 ydominguez@angelcarehhs.com | angelcarehhs.com
 
 #HomeHealthcare #NowHiring #HealthcareJobs #SantaClaraCounty</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /slides-inner -->
+  </div><!-- /slides -->
+
+  <div class="nav">
+    <button class="nav-btn" id="prevBtn" onclick="move(-1)" disabled>&#8592;</button>
+    <div class="dots">
+      <div class="dot active" onclick="goTo(0)"></div>
+      <div class="dot" onclick="goTo(1)"></div>
     </div>
-    <div class="drop-row">
-      <div class="drop-item"><strong>Drop (PST):</strong> Friday 9:00 AM</div>
-      <div class="drop-item"><strong>Drop (Manila):</strong> Saturday 1:00 AM</div>
-      <div class="drop-item"><strong>Platforms:</strong> IG · Facebook · LinkedIn</div>
-    </div>
+    <button class="nav-btn" id="nextBtn" onclick="move(1)">&#8594;</button>
   </div>
+</div>
 
-  <footer>Drafts produced by Claude Code · Review and approve before posting</footer>
+<footer>Drafts produced by Claude Code · Review and approve before posting</footer>
 
-  <script>
-    function show(post, platform, btn) {
-      document.querySelectorAll('#' + post + '-ig, #' + post + '-fb, #' + post + '-li').forEach(el => el.classList.remove('active'));
-      document.getElementById(post + '-' + platform).classList.add('active');
-      btn.closest('.card').querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-      btn.classList.add('active');
-    }
-  </script>
+<script>
+  let current = 0;
+  const total = 2;
+
+  function move(dir) { goTo(current + dir); }
+
+  function goTo(n) {
+    current = Math.max(0, Math.min(total - 1, n));
+    document.getElementById('slidesInner').style.transform = `translateX(-${current * 100}%)`;
+    document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+    document.getElementById('prevBtn').disabled = current === 0;
+    document.getElementById('nextBtn').disabled = current === total - 1;
+  }
+
+  function showCap(slide, platform, btn) {
+    ['ig','fb','li'].forEach(p => {
+      const el = document.getElementById(slide + '-' + p);
+      if (el) el.classList.remove('active');
+    });
+    const target = document.getElementById(slide + '-' + platform);
+    if (target) target.classList.add('active');
+    btn.closest('.tabs').querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+  }
+</script>
 </body>
 </html>
