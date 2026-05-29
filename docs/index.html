@@ -19,33 +19,19 @@
     .slide { min-width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
 
     .design-side { display: flex; flex-direction: column; gap: 10px; }
-    .slide-counter-row { display: flex; align-items: center; justify-content: space-between; }
     .slide-counter { font-size: 0.72rem; font-weight: 600; color: #6b8caa; letter-spacing: 0.06em; text-transform: uppercase; }
 
-    .inner-carousel { border-radius: 14px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5); aspect-ratio: 1; background: #1a2a3a; position: relative; display: flex; align-items: center; justify-content: center; }
-    .pending-label { font-size: 0.85rem; color: #4a6a80; text-align: center; padding: 24px; }
-    .inner-slides-track { display: flex; transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); height: 100%; }
-    .inner-slides-track img { min-width: 100%; height: 100%; object-fit: cover; display: block; }
-
-    .inner-nav { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-    .inner-btn { width: 32px; height: 32px; border-radius: 50%; border: 1.5px solid #2a3f55; background: transparent; color: #a0b8cc; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; flex-shrink: 0; }
-    .inner-btn:hover { background: #1a2a3a; border-color: #4a7a9b; color: #fff; }
-    .inner-btn:disabled { opacity: 0.25; cursor: default; }
-    .inner-dots { display: flex; gap: 6px; flex: 1; justify-content: center; }
-    .inner-dot { width: 7px; height: 7px; border-radius: 50%; background: #2a3f55; cursor: pointer; transition: all 0.2s; }
-    .inner-dot.active { background: #0057B8; width: 18px; border-radius: 3px; }
+    .canva-link-note { background: #1a2a3a; border-radius: 10px; padding: 20px; font-size: 0.82rem; color: #a0b8cc; line-height: 1.6; border: 1px solid #243444; }
+    .canva-link-note strong { color: #fff; display: block; margin-bottom: 8px; }
 
     .design-actions { display: flex; gap: 10px; }
     .btn-primary { flex: 1; text-align: center; background: #0057B8; color: #fff; padding: 10px 16px; border-radius: 8px; text-decoration: none; font-size: 0.83rem; font-weight: 600; transition: background 0.2s; }
     .btn-primary:hover { background: #0046a0; }
-    .btn-disabled { flex: 1; text-align: center; background: #1a2a3a; color: #4a6a80; padding: 10px 16px; border-radius: 8px; font-size: 0.83rem; font-weight: 600; cursor: not-allowed; }
 
     .caption-side { display: flex; flex-direction: column; gap: 16px; }
     .slide-label { font-size: 0.72rem; font-weight: 600; color: #6b8caa; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
     .status-badge { display: inline-block; font-size: 0.72rem; font-weight: 600; padding: 3px 10px; border-radius: 12px; margin-bottom: 8px; }
     .status-pending { background: #3a2e00; color: #ffd166; }
-    .status-not-started { background: #1a2030; color: #4a6a80; }
-    .status-approved { background: #0a2e1a; color: #4caf7d; }
     .slide-title { font-size: 1.5rem; font-weight: 700; color: #fff; line-height: 1.2; }
     .slide-meta { font-size: 0.83rem; color: #6b8caa; margin-top: 6px; }
     .drop-row { display: flex; gap: 16px; flex-wrap: wrap; }
@@ -59,7 +45,6 @@
     .caption-panel { display: none; }
     .caption-panel.active { display: block; }
     .caption-box { background: #1a2a3a; border-radius: 10px; padding: 16px; font-size: 0.82rem; line-height: 1.7; white-space: pre-wrap; color: #c8d8e8; max-height: 280px; overflow-y: auto; border: 1px solid #243444; }
-    .caption-placeholder { background: #1a2a3a; border-radius: 10px; padding: 24px 16px; font-size: 0.82rem; color: #4a6a80; text-align: center; border: 1px dashed #243444; }
     .caption-box::-webkit-scrollbar { width: 4px; }
     .caption-box::-webkit-scrollbar-track { background: transparent; }
     .caption-box::-webkit-scrollbar-thumb { background: #2a3f55; border-radius: 4px; }
@@ -74,9 +59,7 @@
 
     footer { text-align: center; padding: 16px; font-size: 0.72rem; color: #2a3f55; border-top: 1px solid #1e2d3d; }
 
-    @media (max-width: 700px) {
-      .slide { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 700px) { .slide { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -93,19 +76,21 @@
       <!-- SLOT 1: Tuesday / Solano -->
       <div class="slide">
         <div class="design-side">
-          <div class="slide-counter-row">
-            <span class="slide-counter">Design not yet produced</span>
-          </div>
-          <div class="inner-carousel">
-            <div class="pending-label">Run <code>produce-post</code> to generate slides</div>
+          <span class="slide-counter">4-slide carousel · all pages in one design</span>
+          <div class="canva-link-note">
+            <strong>Open in Canva to view all 4 slides</strong>
+            Page 1 — Cover (Solano County, CA)<br>
+            Page 2 — Nursing Roles (RN, LVN, Weekend RN)<br>
+            Page 3 — Therapy Roles (PT, PTA, OT, COTA, ST)<br>
+            Page 4 — Support + CTA (CHHA, MSW)
           </div>
           <div class="design-actions">
-            <span class="btn-disabled">Edit in Canva →</span>
+            <a class="btn-primary" href="https://www.canva.com/d/TuP6p7dex-5kCSG" target="_blank">Edit in Canva (all 4 slides) →</a>
           </div>
         </div>
         <div class="caption-side">
           <div class="slide-header">
-            <div class="status-badge status-not-started">Not Started</div>
+            <div class="status-badge status-pending">⏳ Pending Review</div>
             <div class="slide-label">01 · Tuesday</div>
             <div class="slide-title">Solano County, CA</div>
             <div class="slide-meta">17 openings · RN, LVN, PT, PTA, OT, COTA, ST, CHHA, MSW, Weekend RN</div>
@@ -114,26 +99,55 @@
             <div class="drop-pill"><strong>PST:</strong> Tue Jun 2 · 9:00 AM</div>
             <div class="drop-pill"><strong>Manila:</strong> Wed Jun 3 · 1:00 AM</div>
           </div>
-          <div class="caption-placeholder">Captions will appear here after <code>produce-post</code> runs.</div>
+          <div class="tabs">
+            <button class="tab active" onclick="showCap('s1','ig',this)">Instagram</button>
+            <button class="tab" onclick="showCap('s1','fb',this)">Facebook</button>
+            <button class="tab" onclick="showCap('s1','li',this)">LinkedIn</button>
+          </div>
+          <div id="s1-ig" class="caption-panel active">
+            <div class="caption-box">We're hiring in Solano County, CA! 🏥 Angelcare Home Health Services has 17 open positions for dedicated healthcare professionals. RN, LVN, PT, PTA, OT, COTA, Speech Therapist, CHHA, MSW &amp; Weekend RN — apply today.
+
+Link in bio or email ydominguez@angelcarehhs.com
+
+#AngelcareHHS #NowHiring #HomeHealthCare #SolanoCounty #RegisteredNurse #PhysicalTherapist #OccupationalTherapist #HealthcareJobs #HomeHealthJobs #NursingJobs #CaliforniaHealthcare #JoinOurTeam</div>
+          </div>
+          <div id="s1-fb" class="caption-panel">
+            <div class="caption-box">📢 Angelcare Home Health Services is hiring in Solano County, CA! We have 17 open positions across clinical and support roles — RN, LVN, PT, PTA, OT, COTA, Speech Therapist, CHHA, Medical Social Worker, and Weekend RN.
+
+We care about our staff as much as our patients. Flexible scheduling, supportive team, and meaningful home health work. Reach out today at ydominguez@angelcarehhs.com or visit angelcarehhs.com.
+
+#NowHiring #HomeHealthCare #SolanoCounty #AngelcareHHS #HealthcareJobs #ClinicalJobs</div>
+          </div>
+          <div id="s1-li" class="caption-panel">
+            <div class="caption-box">Angelcare Home Health Services is actively expanding in Solano County, CA — 17 open positions for experienced clinical professionals including Registered Nurses, Physical and Occupational Therapists, Speech Therapists, LVNs, Medical Social Workers, and Certified Home Health Aides.
+
+We offer flexible scheduling and a team environment built around quality patient care. If you or someone in your network is exploring home health opportunities in Northern California, we'd welcome the conversation.
+
+📩 ydominguez@angelcarehhs.com | angelcarehhs.com
+
+#HomeHealthcare #NowHiring #HealthcareJobs #SolanoCounty</div>
+          </div>
         </div>
       </div>
 
       <!-- SLOT 2: Friday / Santa Clara -->
       <div class="slide">
         <div class="design-side">
-          <div class="slide-counter-row">
-            <span class="slide-counter">Design not yet produced</span>
-          </div>
-          <div class="inner-carousel">
-            <div class="pending-label">Run <code>produce-post</code> to generate slides</div>
+          <span class="slide-counter">4-slide carousel · all pages in one design</span>
+          <div class="canva-link-note">
+            <strong>Open in Canva to view all 4 slides</strong>
+            Page 1 — Cover (Santa Clara County, CA)<br>
+            Page 2 — Nursing Roles (RN, LVN, Weekend RN)<br>
+            Page 3 — Therapy Roles (PT, PTA, OT, COTA, ST)<br>
+            Page 4 — Support + CTA (CHHA, MSW)
           </div>
           <div class="design-actions">
-            <span class="btn-disabled">Edit in Canva →</span>
+            <a class="btn-primary" href="https://www.canva.com/d/bkXQ8UiSzqIHuNW" target="_blank">Edit in Canva (all 4 slides) →</a>
           </div>
         </div>
         <div class="caption-side">
           <div class="slide-header">
-            <div class="status-badge status-not-started">Not Started</div>
+            <div class="status-badge status-pending">⏳ Pending Review</div>
             <div class="slide-label">02 · Friday</div>
             <div class="slide-title">Santa Clara County, CA</div>
             <div class="slide-meta">19 openings · RN, LVN, PT, PTA, OT, COTA, ST, CHHA, MSW, Weekend RN</div>
@@ -142,7 +156,34 @@
             <div class="drop-pill"><strong>PST:</strong> Fri Jun 5 · 9:00 AM</div>
             <div class="drop-pill"><strong>Manila:</strong> Sat Jun 6 · 1:00 AM</div>
           </div>
-          <div class="caption-placeholder">Captions will appear here after <code>produce-post</code> runs.</div>
+          <div class="tabs">
+            <button class="tab active" onclick="showCap('s2','ig',this)">Instagram</button>
+            <button class="tab" onclick="showCap('s2','fb',this)">Facebook</button>
+            <button class="tab" onclick="showCap('s2','li',this)">LinkedIn</button>
+          </div>
+          <div id="s2-ig" class="caption-panel active">
+            <div class="caption-box">Hiring in Santa Clara County, CA! 🏥 Angelcare Home Health Services has 19 open positions for compassionate healthcare professionals. RN, LVN, PT, PTA, OT, COTA, Speech Therapist, CHHA, MSW &amp; Weekend RN — join our team.
+
+Link in bio or email ydominguez@angelcarehhs.com
+
+#AngelcareHHS #NowHiring #HomeHealthCare #SantaClaraCounty #RegisteredNurse #PhysicalTherapist #OccupationalTherapist #HealthcareJobs #HomeHealthJobs #NursingJobs #SiliconValley #JoinOurTeam</div>
+          </div>
+          <div id="s2-fb" class="caption-panel">
+            <div class="caption-box">📢 Angelcare Home Health Services is growing in Santa Clara County, CA! 19 open positions available — RN, LVN, PT, PTA, OT, COTA, Speech Therapist, CHHA, Medical Social Worker, and Weekend RN.
+
+Our clinicians do meaningful work — 1:1 patient care in the home setting, with the flexibility and support they deserve. Interested? Email ydominguez@angelcarehhs.com or visit angelcarehhs.com.
+
+#NowHiring #HomeHealthCare #SantaClaraCounty #AngelcareHHS #HealthcareJobs #ClinicalJobs</div>
+          </div>
+          <div id="s2-li" class="caption-panel">
+            <div class="caption-box">Angelcare Home Health Services is growing in Santa Clara County, CA — 19 open positions for clinical professionals including Registered Nurses, Physical and Occupational Therapists, Speech Therapists, LVNs, Medical Social Workers, and Certified Home Health Aides.
+
+We value our team as much as our patients. If you're seeking a purposeful home health career in Silicon Valley and the surrounding area, we'd welcome the conversation.
+
+📩 ydominguez@angelcarehhs.com | angelcarehhs.com
+
+#HomeHealthcare #NowHiring #HealthcareJobs #SantaClaraCounty</div>
+          </div>
         </div>
       </div>
 
@@ -171,6 +212,16 @@
     document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
     document.getElementById('prevBtn').disabled = current === 0;
     document.getElementById('nextBtn').disabled = current === total - 1;
+  }
+  function showCap(slide, platform, btn) {
+    ['ig','fb','li'].forEach(p => {
+      const el = document.getElementById(slide + '-' + p);
+      if (el) el.classList.remove('active');
+    });
+    const target = document.getElementById(slide + '-' + platform);
+    if (target) target.classList.add('active');
+    btn.closest('.tabs').querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
   }
 </script>
 </body>
