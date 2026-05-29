@@ -12,6 +12,10 @@ Produce one hiring post draft end-to-end: copy the Canva hiring template, update
 - **slot ID** — `01-tue-hiring` or `02-fri-hiring`. If Jeff says "tomorrow's post," compute tomorrow's day and map to slot.
 - **week** — defaults to current ISO week (`YYYY-W##`). Override if Jeff specifies.
 
+## Roster
+
+`content/hiring-roster.json` is the source of truth for open positions. The brief.md for each slot is pre-filled from this data but can be overridden manually. If Jeff says "update the roster" or "we filled the RN slot," update `hiring-roster.json` first, then re-generate the brief.
+
 ## Required tools
 
 - `Canva:copy-design`, `Canva:get-design-content`, `Canva:get-design-pages`, `Canva:start-editing-transaction`, `Canva:perform-editing-operations`, `Canva:commit-editing-transaction`, `Canva:cancel-editing-transaction`, `Canva:get-design`

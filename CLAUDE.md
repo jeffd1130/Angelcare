@@ -51,8 +51,29 @@ The brand voice says: *"We care about our staff as much as our patients."*
 - **Master template**: `DAG2tE1DHiI` — "Blue Photo Job Vacancy Instagram Post" (19 pages / variants)
 - **Brand reference**: `DAHKZvtfKl4` — Angelcare brand colors, fonts, logo
 - **Mode**: copy-template — each run copies the master and edits text fields
-- **Page selection**: default to page 1; update `templates.json → slot.template_page` to use a different variant per role
 - **No Canva brand kit yet** — create one and add ID to `templates.json → canva_workspace.brand_kit_id` when ready
+
+### Template page roles (for 4-slide carousels)
+
+| Slide | Template page | Photo | Text structure |
+|-------|--------------|-------|----------------|
+| S1 Cover | Page 1 | Original nurse (`MAG2tRZ191s`) | Big headline + county + total openings + Apply Now bar + contact footer |
+| S2 Nursing | Page 2 | Asian female clinician (`MAG2tFsHEK4`) | Big headline + county + section header + role list + contact in text block |
+| S3 Therapy | Page 3 | Black female clinician (`MAG2tP5PtlU`) | Same as S2 |
+| S4 Support+CTA | Page 4 | Male clinician (`MAG2tZmjLW0`) | Same as S2 |
+
+**Key constraint**: `update_fill` only works with assets already in a design's media bundle. To get different photos per slide, copy from the matching template page (not always page 1). Trying to swap a photo from page 2 into a page-1 copy will fail with "media bundle not found."
+
+**Page 2–4 text structure** differs from page 1: no "Apply Now" button bar or separate contact footer elements. Include email/phone/website inline in the role list text block instead.
+
+### Carousel text elements (per slide)
+
+Pages 2–4 copies use these richtext element suffixes (page ID varies per copy):
+- `-LBTl2H17syQSVsxQ` / `-LBvfNBV9JLbXP0hg` / `-LBfP62ZGMJmWZPf3` — headline word 1
+- `-LBvqqdmQ60QR7VLc` / `-LBsfZtJ34WnzNFg2` / `-LBp2F9Mb9hH6gmZN` — headline word 2
+- `-LBZlTyTjzdhJjjXX` / `-LB43sLrKl1tZ9JdK` / `-LBdlhDsm81HCWs02` — county
+- `-LBZwGF3kHzpN7p7j` / `-LBn01ffyFRTWVV8p` / `-LBr0yJqws0Srh1Vn` — section header
+- `-LBTfGPnZ43gwxwgg` / `-LBDf0kSD2JD1Gk8d` / `-LBwFPnV7y9CyBfb4` — role list + contact
 
 ---
 
