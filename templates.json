@@ -21,10 +21,10 @@
   "templates": {
     "01-tue-hiring": {
       "name": "ACA-Hiring-Tuesday",
-      "template_page": 1,
       "design_type": "instagram_post",
       "dimensions": "1080x1080",
-      "format": "single",
+      "format": "carousel",
+      "carousel_pages": [1, 2, 3, 4],
       "audience": "job seekers",
       "schedule": {
         "day": "Tuesday",
@@ -37,10 +37,10 @@
     },
     "02-fri-hiring": {
       "name": "ACA-Hiring-Friday",
-      "template_page": 1,
       "design_type": "instagram_post",
       "dimensions": "1080x1080",
-      "format": "single",
+      "format": "carousel",
+      "carousel_pages": [1, 2, 3, 4],
       "audience": "job seekers",
       "schedule": {
         "day": "Friday",
