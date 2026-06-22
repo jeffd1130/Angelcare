@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-06-22T00:00:00+08:00",
+  "slot": "01-tue-hiring",
+  "week": "2026-W26",
+  "canva_design_id": "DAHNRotYYQE",
+  "canva_edit_url": "https://www.canva.com/d/zpz-lq0rZo8cGnL",
+  "county": "Solano",
+  "total_openings": 17,
+  "roles": {
+    "RN": 2,
+    "LVN": 2,
+    "PT": 2,
+    "PTA": 2,
+    "OT": 2,
+    "COTA": 2,
+    "ST": 1,
+    "CHHA": 2,
+    "MSW": 1,
+    "Weekend RN": 1
+  },
+  "schedule": {
+    "post_day": "Tuesday",
+    "drop_pst": "09:00",
+    "drop_mla": "01:00+1 (Wed)"
+  },
+  "platforms": ["instagram", "facebook", "linkedin"],
+  "status": "draft-ready"
+}
